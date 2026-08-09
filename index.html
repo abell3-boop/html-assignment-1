@@ -1,35 +1,152 @@
-<main>
-    <section class="intro">
-        <h2>About Me</h2>
-        <p>
-            Welcome to my page! This website shares a little information
-            about me, my interests, and what I am learning.
-        </p>
-    </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alisa's Homework 2 Page</title>
 
-    <section class="content-grid">
-        <article class="card">
-            <h2>My Interests</h2>
-            <p>
-                I am interested in technology, cybersecurity, and learning
-                how websites are created.
-            </p>
-        </article>
+    <!-- Links the CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-        <article class="card">
-            <h2>My Goals</h2>
-            <p>
-                My goal is to continue developing my technology skills
-                and eventually begin a career in cybersecurity.
-            </p>
-        </article>
+<body>
 
-        <article class="card">
-            <h2>What I Am Learning</h2>
+    <header id="top">
+        <h1>Welcome to My Page</h1>
+        <p>Learning Web Development One Step at a Time</p>
+
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#interests">Interests</a>
+            <a href="#goals">Goals</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="intro">
+            <h2>About Me</h2>
+
             <p>
-                I am currently learning HTML, CSS, responsive design,
-                Flexbox, and Grid.
+                My name is Alisa. I am currently learning web development
+                and building my skills with HTML and CSS. I am also interested
+                in technology and cybersecurity.
             </p>
-        </article>
-    </section>
-</main>
+
+            <p>
+                Learning how websites work is helping me better understand
+                the technology that I use every day.
+            </p>
+        </section>
+
+
+        <!-- GRID SECTION -->
+        <section class="content-grid">
+
+            <article id="interests" class="card">
+                <h2>My Interests</h2>
+
+                <p>
+                    I enjoy learning about technology, cybersecurity,
+                    computers, and web development.
+                </p>
+
+                <h3>Things I Enjoy</h3>
+
+                <ul>
+                    <li>Cybersecurity</li>
+                    <li>Technology</li>
+                    <li>Web Development</li>
+                    <li>Learning new computer skills</li>
+                </ul>
+            </article>
+
+
+            <article id="goals" class="card">
+                <h2>My Goals</h2>
+
+                <p>
+                    One of my main goals is to continue developing my
+                    technology skills and eventually begin a career in
+                    cybersecurity.
+                </p>
+
+                <h3>My Current Goals</h3>
+
+                <ol>
+                    <li>Complete my college degree</li>
+                    <li>Improve my web development skills</li>
+                    <li>Learn more about cybersecurity</li>
+                    <li>Begin a career in technology</li>
+                </ol>
+            </article>
+
+
+            <article class="card">
+                <h2>What I Am Learning</h2>
+
+                <p>
+                    In web development, I am learning how HTML provides
+                    the structure of a webpage while CSS controls how the
+                    webpage looks.
+                </p>
+
+                <h3>Current Skills</h3>
+
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>CSS Grid</li>
+                    <li>Flexbox</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </article>
+
+        </section>
+
+
+        <!-- SECOND SECTION -->
+        <section class="learning-section">
+
+            <div class="learning-text">
+                <h2>Why I Am Learning Web Development</h2>
+
+                <p>
+                    Web development is helping me understand how websites
+                    are created and how information is displayed online.
+                    These skills are useful because technology is involved
+                    in many different careers.
+                </p>
+
+                <p>
+                    I also believe web development skills will help me as
+                    I continue learning about cybersecurity.
+                </p>
+            </div>
+
+
+            <aside class="side-box">
+                <h2>Quick Facts</h2>
+
+                <p><strong>Career Interest:</strong> Cybersecurity</p>
+
+                <p><strong>Current Topic:</strong> Responsive Web Design</p>
+
+                <p><strong>Current Tools:</strong> HTML and CSS</p>
+            </aside>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>&copy; 2026 Alisa Bell</p>
+        <p>Created for my Web Development class.</p>
+
+        <a href="#top">Back to Top</a>
+    </footer>
+
+</body>
+</html>
