@@ -3,118 +3,69 @@
     box-sizing: border-box;
 }
 
-/* Basic page styling */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #1b263b;
+    background-color: #f5f5f5;
+    color: #222;
 }
 
-/* Header */
-header {
-    background-color: #1b4965;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Flexbox navigation */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    margin-top: 15px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 8px;
-}
-
-nav a:hover {
-    background-color: #62b6cb;
-    border-radius: 5px;
-}
-
-/* Main page layout */
-.container {
+/* Keeps the page from becoming too wide */
+main {
     width: 90%;
     max-width: 1200px;
-    margin: 30px auto;
+    margin: 0 auto;
+    padding: 20px;
+}
 
+.intro {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #4b5d8a;
+}
+
+/* DESKTOP GRID */
+.content-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-/* Sections */
 .card {
     background-color: white;
-    border: 2px solid #62b6cb;
+    border: 2px solid #4b5d8a;
     padding: 20px;
     border-radius: 8px;
 }
 
-/* Skills layout */
-.skills-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.skills-grid article {
-    background-color: #eaf4f4;
-    padding: 15px;
-    border-radius: 5px;
-}
-
-/* Footer */
-footer {
-    background-color: #1b4965;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-}
-
-/* Prevent images and content from overflowing */
+/* Prevent images from causing horizontal scrolling */
 img {
     max-width: 100%;
     height: auto;
 }
 
 /* TABLET */
-@media screen and (max-width: 900px) {
+@media (max-width: 900px) {
 
-    .container {
+    .content-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    #contact {
-        grid-column: 1 / -1;
     }
 }
 
 /* MOBILE */
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
 
-    .container {
+    main {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .content-grid {
         grid-template-columns: 1fr;
     }
 
-    #contact {
-        grid-column: auto;
-    }
-
-    nav {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    header {
+    .card {
         padding: 15px;
     }
 }
