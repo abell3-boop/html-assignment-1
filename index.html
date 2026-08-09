@@ -1,92 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Alisa Bell</title>
-  <link rel="stylesheet" href="styles.css">
+    <title>Homework 2</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <header>
-        <h1>About Me</h1>
-        <p>Welcome to my personal webpage!</p>
+        <h1>Homework 2</h1>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#goals">My Goals</a></li>
-            <li><a href="#hobbies">My Hobbies</a></li>
-        </ul>
-    </nav>
+    <main class="container">
 
-    <main>
-
-        <section id="about">
-            <h2>Who I Am</h2>
+        <section id="about" class="card">
+            <h2>About Me</h2>
             <p>
-                Hello! My name is Alisa Bell. I am currently a college student
-                working toward a degree in Cybersecurity. I enjoy learning about
-                technology and how to protect people and businesses from cyber threats.
-                I work full-time while balancing school and being a proud mom.
+                My name is Alisa. I am a student learning web development
+                and building my skills in HTML and CSS.
             </p>
-
-            <img
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
-                alt="Student studying on a laptop at a desk"
-                width="400">
         </section>
 
-        <section id="goals">
-            <h2>My Future Goals</h2>
+        <section id="skills" class="card">
+            <h2>My Skills</h2>
 
-            <article>
-                <h3>Career Goals</h3>
-                <p>
-                    My biggest goal is to graduate with my degree and begin a career
-                    in cybersecurity. I hope to continue learning new skills and earn
-                    industry certifications that will help me grow professionally.
-                </p>
-            </article>
+            <div class="skills-grid">
+                <article>
+                    <h3>HTML</h3>
+                    <p>I use HTML to organize and structure web pages.</p>
+                </article>
 
-            <article>
-                <h3>Personal Goals</h3>
-                <p>
-                    I want to provide a successful future for my daughter while
-                    continuing to grow personally and professionally. Staying
-                    organized and managing my time are important to reaching my goals.
-                </p>
-            </article>
+                <article>
+                    <h3>CSS</h3>
+                    <p>I use CSS to add colors, spacing, and page layouts.</p>
+                </article>
+
+                <article>
+                    <h3>Responsive Design</h3>
+                    <p>I am learning how to make websites work on different screen sizes.</p>
+                </article>
+            </div>
         </section>
 
-        <section id="hobbies">
-            <h2>Things I Enjoy</h2>
-
-            <ul>
-                <li>Learning about cybersecurity</li>
-                <li>Spending time with my daughter</li>
-                <li>Reading and researching technology</li>
-                <li>Listening to music</li>
-                <li>Watching movies</li>
-            </ul>
-
-            <h3>My Daily Priorities</h3>
-
-            <ol>
-                <li>Go to work</li>
-                <li>Attend college classes</li>
-                <li>Complete homework</li>
-                <li>Spend time with my daughter</li>
-                <li>Continue learning new technology skills</li>
-            </ol>
+        <section id="contact" class="card">
+            <h2>Contact</h2>
+            <p>Email: abell3@my.campus.edu</p>
         </section>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 Alisa Bell | HTML Assignment</p>
+        <p>&copy; 2026 Alisa Bell</p>
     </footer>
 
 </body>
