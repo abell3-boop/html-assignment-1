@@ -1,140 +1,112 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alisa's Homework 2 Page</title>
-
-    <!-- Links the CSS file -->
+    <title>Alisa's Web Page</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <header id="top">
-        <h1>Welcome to My Page</h1>
-        <p>Learning Web Development One Step at a Time</p>
-
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#interests">Interests</a>
-            <a href="#goals">Goals</a>
-        </nav>
+    <header>
+        <h1>Welcome to My Web Page</h1>
+        <p>My name is Alisa, and I am learning web development.</p>
     </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">My Skills</a></li>
+            <li><a href="#javascript">JavaScript</a></li>
+        </ul>
+    </nav>
 
     <main>
 
-        <!-- ABOUT SECTION -->
-        <section id="about" class="intro">
+        <!-- About Me Section -->
+        <section id="about">
             <h2>About Me</h2>
 
             <p>
-                My name is Alisa. I am currently learning web development
-                and building my skills with HTML and CSS. I am also interested
-                in technology and cybersecurity.
+                I am a college student learning about technology and web development.
+                I am interested in cybersecurity and enjoy learning new computer skills.
             </p>
 
-            <p>
-                Learning how websites work is helping me better understand
-                the technology that I use every day.
-            </p>
-        </section>
-
-
-        <!-- GRID SECTION -->
-        <section class="content-grid">
-
-            <article id="interests" class="card">
-                <h2>My Interests</h2>
-
-                <p>
-                    I enjoy learning about technology, cybersecurity,
-                    computers, and web development.
-                </p>
-
-                <h3>Things I Enjoy</h3>
-
-                <ul>
-                    <li>Cybersecurity</li>
-                    <li>Technology</li>
-                    <li>Web Development</li>
-                    <li>Learning new computer skills</li>
-                </ul>
-            </article>
-
-
-            <article id="goals" class="card">
-                <h2>My Goals</h2>
-
-                <p>
-                    One of my main goals is to continue developing my
-                    technology skills and eventually begin a career in
-                    cybersecurity.
-                </p>
-
-                <h3>My Current Goals</h3>
-
-                <ol>
-                    <li>Complete my college degree</li>
-                    <li>Improve my web development skills</li>
-                    <li>Learn more about cybersecurity</li>
-                    <li>Begin a career in technology</li>
-                </ol>
-            </article>
-
-
-            <article class="card">
-                <h2>What I Am Learning</h2>
-
-                <p>
-                    In web development, I am learning how HTML provides
-                    the structure of a webpage while CSS controls how the
-                    webpage looks.
-                </p>
-
-                <h3>Current Skills</h3>
-
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>CSS Grid</li>
-                    <li>Flexbox</li>
-                    <li>Responsive Design</li>
-                </ul>
-            </article>
+            <img src="https://via.placeholder.com/300"
+                 alt="Placeholder image representing web development">
 
         </section>
 
 
-        <!-- SECOND SECTION -->
-        <section class="learning-section">
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>My Skills</h2>
 
-            <div class="learning-text">
-                <h2>Why I Am Learning Web Development</h2>
-
-                <p>
-                    Web development is helping me understand how websites
-                    are created and how information is displayed online.
-                    These skills are useful because technology is involved
-                    in many different careers.
-                </p>
-
-                <p>
-                    I also believe web development skills will help me as
-                    I continue learning about cybersecurity.
-                </p>
-            </div>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Problem Solving</li>
+                <li>Technology</li>
+            </ul>
+        </section>
 
 
-            <aside class="side-box">
-                <h2>Quick Facts</h2>
+        <!-- JavaScript Section -->
+        <section id="javascript">
+            <h2>JavaScript Features</h2>
 
-                <p><strong>Career Interest:</strong> Cybersecurity</p>
+            <!-- Requirement 1: Button changes content -->
+            <h3>Button Interaction</h3>
 
-                <p><strong>Current Topic:</strong> Responsive Web Design</p>
+            <button id="messageButton" type="button">
+                Click Me
+            </button>
 
-                <p><strong>Current Tools:</strong> HTML and CSS</p>
-            </aside>
+            <p id="message">
+                Click the button to see a message!
+            </p>
+
+
+            <!-- Requirement 2: Style changes on input -->
+            <h3>Type Your Name</h3>
+
+            <label for="nameInput">
+                Enter your name:
+            </label>
+
+            <input
+                type="text"
+                id="nameInput"
+                placeholder="Type your name"
+            >
+
+            <p id="nameMessage">
+                Start typing to change the style!
+            </p>
+
+
+            <!-- Requirement 3: Dynamic List -->
+            <h3>Things I Want to Learn</h3>
+
+            <label for="itemInput">
+                Add a skill:
+            </label>
+
+            <input
+                type="text"
+                id="itemInput"
+                placeholder="Enter a skill"
+            >
+
+            <button id="addItemButton" type="button">
+                Add Skill
+            </button>
+
+            <ul id="learningList">
+                <li>JavaScript</li>
+            </ul>
 
         </section>
 
@@ -142,11 +114,13 @@
 
 
     <footer>
-        <p>&copy; 2026 Alisa Bell</p>
-        <p>Created for my Web Development class.</p>
-
-        <a href="#top">Back to Top</a>
+        <p>&copy; 2026 Alisa's Web Page</p>
     </footer>
+
+
+    <!-- JavaScript file -->
+    <script src="script.js"></script>
 
 </body>
 </html>
+```
