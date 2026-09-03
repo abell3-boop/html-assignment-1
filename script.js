@@ -1,4 +1,4 @@
-```javascript
+
 // Button changes content
 
 const messageButton = document.getElementById("messageButton");
