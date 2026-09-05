@@ -1,112 +1,130 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Alisa's Web Page</title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Welcome to My Web Page</h1>
-        <p>My name is Alisa, and I am learning web development.</p>
+        <h1>Alisa's Web Page</h1>
+
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#learning">What I'm Learning</a>
+            <a href="#javascript">JavaScript</a>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#skills">My Skills</a></li>
-            <li><a href="#javascript">JavaScript</a></li>
-        </ul>
-    </nav>
 
     <main>
 
-        <!-- About Me Section -->
+        <!-- ABOUT SECTION -->
         <section id="about">
             <h2>About Me</h2>
 
             <p>
-                I am a college student learning about technology and web development.
-                I am interested in cybersecurity and enjoy learning new computer skills.
+                Welcome to my webpage! My name is Alisa. I am a college
+                student interested in technology and cybersecurity.
             </p>
 
-            <img src="https://via.placeholder.com/300"
-                 alt="Placeholder image representing web development">
-
+            <p>
+                I am learning how to create websites using HTML, CSS,
+                and JavaScript.
+            </p>
         </section>
 
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2>My Skills</h2>
+        <!-- LEARNING SECTION -->
+        <section id="learning">
+            <h2>What I'm Learning</h2>
 
             <ul>
                 <li>HTML</li>
                 <li>CSS</li>
-                <li>Problem Solving</li>
-                <li>Technology</li>
+                <li>JavaScript</li>
+                <li>Web Development</li>
+                <li>Cybersecurity</li>
             </ul>
         </section>
 
 
-        <!-- JavaScript Section -->
+        <!-- JAVASCRIPT SECTION -->
         <section id="javascript">
-            <h2>JavaScript Features</h2>
 
-            <!-- Requirement 1: Button changes content -->
-            <h3>Button Interaction</h3>
-
-            <button id="messageButton" type="button">
-                Click Me
-            </button>
-
-            <p id="message">
-                Click the button to see a message!
-            </p>
+            <h2>JavaScript Interactions</h2>
 
 
-            <!-- Requirement 2: Style changes on input -->
-            <h3>Type Your Name</h3>
+            <!-- 1. BUTTON CHANGES CONTENT -->
+            <div class="interactive-box">
 
-            <label for="nameInput">
-                Enter your name:
-            </label>
+                <h3>Button Interaction</h3>
 
-            <input
-                type="text"
-                id="nameInput"
-                placeholder="Type your name"
-            >
+                <p id="message">
+                    Click the button to change this message.
+                </p>
 
-            <p id="nameMessage">
-                Start typing to change the style!
-            </p>
+                <button id="messageButton" type="button">
+                    Change Message
+                </button>
+
+            </div>
 
 
-            <!-- Requirement 3: Dynamic List -->
-            <h3>Things I Want to Learn</h3>
+            <!-- 2. STYLE CHANGES ON INPUT -->
+            <div class="interactive-box">
 
-            <label for="itemInput">
-                Add a skill:
-            </label>
+                <h3>Input Interaction</h3>
 
-            <input
-                type="text"
-                id="itemInput"
-                placeholder="Enter a skill"
-            >
+                <label for="nameInput">
+                    Type your name:
+                </label>
 
-            <button id="addItemButton" type="button">
-                Add Skill
-            </button>
+                <input
+                    type="text"
+                    id="nameInput"
+                    placeholder="Enter your name"
+                >
 
-            <ul id="learningList">
-                <li>JavaScript</li>
-            </ul>
+                <p id="nameMessage">
+                    Start typing to change the style!
+                </p>
+
+            </div>
+
+
+            <!-- 3. DYNAMIC LIST -->
+            <div class="interactive-box">
+
+                <h3>Dynamic Learning List</h3>
+
+                <label for="itemInput">
+                    Add something you are learning:
+                </label>
+
+                <input
+                    type="text"
+                    id="itemInput"
+                    placeholder="Enter an item"
+                >
+
+                <button id="addItemButton" type="button">
+                    Add Item
+                </button>
+
+                <ul id="learningList">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+
+            </div>
 
         </section>
 
@@ -118,10 +136,10 @@
     </footer>
 
 
-    <!-- JavaScript file -->
+    <!-- JavaScript file - ONLY INCLUDE IT ONCE -->
     <script src="script.js"></script>
 
-<script src="script.js"></script>
 </body>
+
 </html>
 ```
