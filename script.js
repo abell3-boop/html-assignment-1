@@ -1,145 +1,504 @@
+// ============================================
+// BUTTON CHANGES CONTENT
+// ============================================
 
-<!DOCTYPE html>
-<html lang="en">
+const messageButton =
+    document.getElementById("messageButton");
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Alisa's Web Page</title>
-
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-
-    <header>
-        <h1>Alisa's Web Page</h1>
-
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#learning">What I'm Learning</a>
-            <a href="#javascript">JavaScript</a>
-        </nav>
-    </header>
+const message =
+    document.getElementById("message");
 
 
-    <main>
+messageButton.addEventListener("click", function () {
 
-        <!-- ABOUT SECTION -->
-        <section id="about">
-            <h2>About Me</h2>
+    message.textContent =
+        "Great job! You clicked the button!";
 
-            <p>
-                Welcome to my webpage! My name is Alisa. I am a college
-                student interested in technology and cybersecurity.
-            </p>
-
-            <p>
-                I am learning how to create websites using HTML, CSS,
-                and JavaScript.
-            </p>
-        </section>
+});
 
 
-        <!-- LEARNING SECTION -->
-        <section id="learning">
-            <h2>What I'm Learning</h2>
+// ============================================
+// STYLE CHANGES WHEN TYPING
+// ============================================
 
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Web Development</li>
-                <li>Cybersecurity</li>
-            </ul>
-        </section>
+const nameInput =
+    document.getElementById("nameInput");
+
+const nameMessage =
+    document.getElementById("nameMessage");
 
 
-        <!-- JAVASCRIPT SECTION -->
-        <section id="javascript">
+if (nameInput && nameMessage) {
 
-            <h2>JavaScript Interactions</h2>
+    nameInput.addEventListener("input", function () {
 
+        if (nameInput.value.length > 0) {
 
-            <!-- 1. BUTTON CHANGES CONTENT -->
-            <div class="interactive-box">
+            nameInput.style.backgroundColor =
+                "#e6f0ff";
 
-                <h3>Button Interaction</h3>
+            nameInput.style.border =
+                "2px solid #4a6fa5";
 
-                <p id="message">
-                    Click the button to change this message.
-                </p>
+            nameMessage.textContent =
+                "Nice! You are typing.";
 
-                <button id="messageButton" type="button">
-                    Change Message
-                </button>
+        } else {
 
-            </div>
+            nameInput.style.backgroundColor =
+                "white";
 
+            nameInput.style.border =
+                "1px solid #999";
 
-            <!-- 2. STYLE CHANGES ON INPUT -->
-            <div class="interactive-box">
+            nameMessage.textContent =
+                "Start typing to change the style!";
 
-                <h3>Input Interaction</h3>
+        }
 
-                <label for="nameInput">
-                    Type your name:
-                </label>
+    });
 
-                <input
-                    type="text"
-                    id="nameInput"
-                    placeholder="Enter your name"
-                >
-
-                <p id="nameMessage">
-                    Start typing to change the style!
-                </p>
-
-            </div>
+}
 
 
-            <!-- 3. DYNAMIC LIST -->
-            <div class="interactive-box">
+// ============================================
+// DYNAMIC LIST
+// ============================================
 
-                <h3>Dynamic Learning List</h3>
+const itemInput =
+    document.getElementById("itemInput");
 
-                <label for="itemInput">
-                    Add something you are learning:
-                </label>
+const addItemButton =
+    document.getElementById("addItemButton");
 
-                <input
-                    type="text"
-                    id="itemInput"
-                    placeholder="Enter an item"
-                >
-
-                <button id="addItemButton" type="button">
-                    Add Item
-                </button>
-
-                <ul id="learningList">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                </ul>
-
-            </div>
-
-        </section>
-
-    </main>
+const learningList =
+    document.getElementById("learningList");
 
 
-    <footer>
-        <p>&copy; 2026 Alisa's Web Page</p>
-    </footer>
+addItemButton.addEventListener("click", function () {
+
+    const newItemText =
+        itemInput.value.trim();
 
 
-    <!-- JavaScript file - ONLY INCLUDE IT ONCE -->
-    
+    if (newItemText !== "") {
 
-</body>
+        const newListItem =
+            document.createElement("li");
 
-</html>
-```
+        newListItem.textContent =
+            newItemText;
+
+        learningList.appendChild(
+            newListItem
+        );
+
+        itemInput.value = "";
+
+    }
+
+});
+
+
+// ============================================
+// CONTACT FORM VALIDATION
+// ============================================
+
+const contactForm =
+    document.getElementById("contactForm");
+
+const contactName =
+    document.getElementById("nameInput");
+
+const contactEmail =
+    document.getElementById("emailInput");
+
+const contactTopic =
+    document.getElementById("topicInput");
+
+const contactMessage =
+    document.getElementById("messageInput");
+
+
+const nameError =
+    document.getElementById("nameError");
+
+const emailError =
+    document.getElementById("emailError");
+
+const topicError =
+    document.getElementById("topicError");
+
+const messageError =
+    document.getElementById("messageError");
+
+const formStatus =
+    document.getElementById("formStatus");
+
+
+// ============================================
+// ERROR FUNCTION
+// ============================================
+
+function showError(
+    input,
+    errorElement,
+    errorText
+) {
+
+    errorElement.textContent =
+        errorText;
+
+    input.classList.add(
+        "input-error"
+    );
+
+    input.setAttribute(
+        "aria-invalid",
+        "true"
+    );
+
+}
+
+
+// ============================================
+// CLEAR ERROR FUNCTION
+// ============================================
+
+function clearError(
+    input,
+    errorElement
+) {
+
+    errorElement.textContent =
+        "";
+
+    input.classList.remove(
+        "input-error"
+    );
+
+    input.removeAttribute(
+        "aria-invalid"
+    );
+
+}
+
+
+// ============================================
+// FORM SUBMISSION
+// ============================================
+
+contactForm.addEventListener(
+    "submit",
+    function (event) {
+
+        // REQUIRED:
+        // Prevent the page from refreshing.
+        event.preventDefault();
+
+
+        let formIsValid = true;
+
+
+        // Clear old errors
+
+        clearError(
+            contactName,
+            nameError
+        );
+
+        clearError(
+            contactEmail,
+            emailError
+        );
+
+        clearError(
+            contactTopic,
+            topicError
+        );
+
+        clearError(
+            contactMessage,
+            messageError
+        );
+
+
+        formStatus.textContent =
+            "";
+
+
+        // =====================================
+        // CHECK NAME
+        // =====================================
+
+        if (
+            contactName.value.trim() === ""
+        ) {
+
+            showError(
+                contactName,
+                nameError,
+                "Please enter your name."
+            );
+
+            formIsValid = false;
+
+        }
+
+
+        // =====================================
+        // CHECK EMAIL
+        // =====================================
+
+        if (
+            contactEmail.value.trim() === ""
+        ) {
+
+            showError(
+                contactEmail,
+                emailError,
+                "Please enter your email address."
+            );
+
+            formIsValid = false;
+
+        }
+
+        else if (
+            !contactEmail.validity.valid
+        ) {
+
+            showError(
+                contactEmail,
+                emailError,
+                "Please enter a valid email address."
+            );
+
+            formIsValid = false;
+
+        }
+
+
+        // =====================================
+        // CHECK REASON
+        // =====================================
+
+        if (
+            contactTopic.value === ""
+        ) {
+
+            showError(
+                contactTopic,
+                topicError,
+                "Please select a reason for contact."
+            );
+
+            formIsValid = false;
+
+        }
+
+
+        // =====================================
+        // CHECK MESSAGE
+        // =====================================
+
+        if (
+            contactMessage.value.trim() === ""
+        ) {
+
+            showError(
+                contactMessage,
+                messageError,
+                "Please enter a message."
+            );
+
+            formIsValid = false;
+
+        }
+
+
+        // =====================================
+        // INVALID FORM
+        // =====================================
+
+        if (!formIsValid) {
+
+            formStatus.textContent =
+                "Please correct the errors above.";
+
+            return;
+
+        }
+
+
+        // =====================================
+        // VALID FORM
+        // =====================================
+
+        formStatus.textContent =
+            "Form submitted successfully!";
+
+        contactForm.reset();
+
+    }
+);
+
+
+// ============================================
+// CLEAR NAME ERROR WHILE TYPING
+// ============================================
+
+contactName.addEventListener(
+    "input",
+    function () {
+
+        if (
+            contactName.value.trim() !== ""
+        ) {
+
+            clearError(
+                contactName,
+                nameError
+            );
+
+        }
+
+    }
+);
+
+
+// ============================================
+// CLEAR EMAIL ERROR WHILE CORRECTING
+// ============================================
+
+contactEmail.addEventListener(
+    "input",
+    function () {
+
+        /*
+         * Once the email becomes valid,
+         * automatically remove the error.
+         */
+
+        if (
+            contactEmail.validity.valid
+        ) {
+
+            clearError(
+                contactEmail,
+                emailError
+            );
+
+        }
+
+    }
+);
+
+
+// ============================================
+// CLEAR TOPIC ERROR
+// ============================================
+
+contactTopic.addEventListener(
+    "change",
+    function () {
+
+        if (
+            contactTopic.value !== ""
+        ) {
+
+            clearError(
+                contactTopic,
+                topicError
+            );
+
+        }
+
+    }
+);
+
+
+// ============================================
+// CLEAR MESSAGE ERROR
+// ============================================
+
+contactMessage.addEventListener(
+    "input",
+    function () {
+
+        if (
+            contactMessage.value.trim() !== ""
+        ) {
+
+            clearError(
+                contactMessage,
+                messageError
+            );
+
+        }
+
+    }
+);
+
+
+// ============================================
+// BONUS: PUBLIC API
+// ============================================
+
+const quoteButton =
+    document.getElementById("quoteButton");
+
+const quoteResult =
+    document.getElementById("quoteResult");
+
+
+quoteButton.addEventListener(
+    "click",
+    function () {
+
+        quoteResult.textContent =
+            "Loading...";
+
+
+        fetch(
+            "https://api.quotable.io/random"
+        )
+
+            .then(function (response) {
+
+                // Check for an unsuccessful response
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "API request failed."
+                    );
+
+                }
+
+                return response.json();
+
+            })
+
+            .then(function (data) {
+
+                // Display API result in the DOM
+
+                quoteResult.textContent =
+                    `"${data.content}" — ${data.author}`;
+
+            })
+
+            .catch(function (error) {
+
+                // Display error in the DOM
+
+                quoteResult.textContent =
+                    "Sorry, the quote could not be loaded.";
+
+                console.error(error);
+
+            });
+
+    }
+);
