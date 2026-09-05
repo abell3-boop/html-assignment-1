@@ -137,7 +137,7 @@
 
 
     <!-- JavaScript file - ONLY INCLUDE IT ONCE -->
-    <script src="script.js"></script>
+    
 
 </body>
 
