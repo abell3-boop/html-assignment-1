@@ -1,62 +1,145 @@
-```javascript
-// Button changes content
-const messageButton = document.getElementById("messageButton");
-const message = document.getElementById("message");
+```html
+<!DOCTYPE html>
+<html lang="en">
 
-messageButton.addEventListener("click", function () {
-    message.textContent = "Great job! You clicked the button!";
-});
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alisa's Web Page</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Alisa's Web Page</h1>
+
+        <nav>
+            <a href="#about">About Me</a>
+            <a href="#learning">What I'm Learning</a>
+            <a href="#javascript">JavaScript</a>
+        </nav>
+    </header>
 
 
-// Style changes when typing
-const nameInput = document.getElementById("nameInput");
-const nameMessage = document.getElementById("nameMessage");
+    <main>
 
-nameInput.addEventListener("input", function () {
-    if (nameInput.value.length > 0) {
-        nameInput.style.backgroundColor = "#e6f0ff";
-        nameInput.style.border = "2px solid #4a6fa5";
-        nameMessage.textContent = "Nice! You are typing.";
-    } else {
-        nameInput.style.backgroundColor = "white";
-        nameInput.style.border = "1px solid #999";
-        nameMessage.textContent = "Start typing to change the style!";
-    }
-});
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <h2>About Me</h2>
+
+            <p>
+                Welcome to my webpage! My name is Alisa. I am a college
+                student interested in technology and cybersecurity.
+            </p>
+
+            <p>
+                I am learning how to create websites using HTML, CSS,
+                and JavaScript.
+            </p>
+        </section>
 
 
-// Dynamic list
-const itemInput = document.getElementById("itemInput");
-const addItemButton = document.getElementById("addItemButton");
-const learningList = document.getElementById("learningList");
+        <!-- LEARNING SECTION -->
+        <section id="learning">
+            <h2>What I'm Learning</h2>
 
-addItemButton.addEventListener("click", function () {
-    const newItemText = itemInput.value.trim();
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Web Development</li>
+                <li>Cybersecurity</li>
+            </ul>
+        </section>
 
-    if (newItemText !== "") {
 
-        // Create a new list item
-        const newListItem = document.createElement("li");
-        newListItem.textContent = newItemText;
+        <!-- JAVASCRIPT SECTION -->
+        <section id="javascript">
 
-        // Create a Remove button
-        const removeButton = document.createElement("button");
-        removeButton.textContent = "Remove";
-        removeButton.type = "button";
+            <h2>JavaScript Interactions</h2>
 
-        // Remove the list item when clicked
-        removeButton.addEventListener("click", function () {
-            newListItem.remove();
-        });
 
-        // Add the Remove button to the list item
-        newListItem.appendChild(removeButton);
+            <!-- 1. BUTTON CHANGES CONTENT -->
+            <div class="interactive-box">
 
-        // Add the new item to the list
-        learningList.appendChild(newListItem);
+                <h3>Button Interaction</h3>
 
-        // Clear the input
-        itemInput.value = "";
-    }
-});
+                <p id="message">
+                    Click the button to change this message.
+                </p>
+
+                <button id="messageButton" type="button">
+                    Change Message
+                </button>
+
+            </div>
+
+
+            <!-- 2. STYLE CHANGES ON INPUT -->
+            <div class="interactive-box">
+
+                <h3>Input Interaction</h3>
+
+                <label for="nameInput">
+                    Type your name:
+                </label>
+
+                <input
+                    type="text"
+                    id="nameInput"
+                    placeholder="Enter your name"
+                >
+
+                <p id="nameMessage">
+                    Start typing to change the style!
+                </p>
+
+            </div>
+
+
+            <!-- 3. DYNAMIC LIST -->
+            <div class="interactive-box">
+
+                <h3>Dynamic Learning List</h3>
+
+                <label for="itemInput">
+                    Add something you are learning:
+                </label>
+
+                <input
+                    type="text"
+                    id="itemInput"
+                    placeholder="Enter an item"
+                >
+
+                <button id="addItemButton" type="button">
+                    Add Item
+                </button>
+
+                <ul id="learningList">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>&copy; 2026 Alisa's Web Page</p>
+    </footer>
+
+
+    <!-- JavaScript file - ONLY INCLUDE IT ONCE -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
 ```
